@@ -50,3 +50,4 @@ $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/maste
 * [kubernetes 服务发现与负载均衡](https://jimmysong.io/kubernetes-handbook/practice/service-discovery-and-loadbalancing.html)
 * [kubernetes之Ingress部署](http://blog.51cto.com/newfly/2060587)
 * [详解k8s组件Ingress边缘路由器并落地到微服务 - kubernetes](https://www.cnblogs.com/justmine/p/8991379.html)
+* [source-ip-for-services-with-type-loadbalancer](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-loadbalancer)
