@@ -322,6 +322,9 @@ EOF
 
 kubectl apply -f $IG_PATH/with-rbac.yaml
 
+sleep 1
+rm -rf $IG_PATH/
+
 echo "\n 
 ***************************************** Test Ingress *****************************************
 注意测试时，要么以curl -H 的方式，要么要配置访问客户端所在机器的hosts文件(任意一台node_ip 域名1 域名2 域名3 ...)，或配置DNS
