@@ -273,6 +273,8 @@ spec:
     spec:
       serviceAccountName: nginx-ingress-serviceaccount
       hostNetwork: true # 添加该字段，暴露nginx-ingress-controller pod的服务端口
+      nodeSelector: # 添加该字段，使pod只调度到标签 zone=master2 的节点上
+        zone: master2
       containers:
         - name: nginx-ingress-controller
           image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.10.0
