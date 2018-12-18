@@ -11,7 +11,7 @@ if [ -z "$ISTIO_PATH" ];then
 fi
 
 # 安装 Servicegraph 附加组件
-curl -ssL https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install/kubernetes/addons/servicegraph.yaml | kubectl apply -f -
+curl -sSL https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install/kubernetes/addons/servicegraph.yaml | kubectl apply -f -
 #kubectl apply -f $ISTIO_PATH/install/kubernetes/addons/servicegraph.yaml
 
 
@@ -57,4 +57,4 @@ echo -e "\n\033[34m
 
 #删除 Servicegraph 附加组件
 #kubectl delete -f $ISTIO_PATH/install/kubernetes/addons/servicegraph.yaml
-#curl -ssL https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install/kubernetes/addons/servicegraph.yaml | kubectl delete -f -
+#curl -sSL https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install/kubernetes/addons/servicegraph.yaml | kubectl delete -f -

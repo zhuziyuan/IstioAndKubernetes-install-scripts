@@ -5,40 +5,40 @@ istio & kubernetes install scripts and samples.
 * environment: `kubernetes cluster`
 * install:
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_istio_on_k8s.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_istio_on_k8s.sh | sh
   ```
 * remove:
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/remove_istio_on_k8s.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/remove_istio_on_k8s.sh | sh
   ```
 ### Telemetry
 * install Servicegraph service
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/generating_service_graph.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/generating_service_graph.sh | sh
   ```
 
 ### Examples
 * install bookinfo application
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_bookinfo_app.sh | bash
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_bookinfo_app.sh | bash
   ```
 
 # Kubernetes
-* [kubernetes nginx-ingress](https://github.com/tomoncle/istio-install-scripts/tree/master/samples/kubernetes/nginx-ingress)
+* [kubernetes nginx-ingress](https://github.com/tomoncle/IstioAndKubernetes-install-scripts/tree/master/samples/kubernetes/nginx-ingress)
 
 * download images
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/k8s_image_download.py | python
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/k8s_image_download.py | python
   ```
 
 * install ingress
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_ingress_for_kubernetes.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_ingress_for_kubernetes.sh | sh
   ```
 
 * install dashboard
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install/kubernetes/dashboard/kubernetes-dashboard.yaml | kubectl create -f - 
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install/kubernetes/dashboard/kubernetes-dashboard.yaml | kubectl create -f - 
   ```
 
 ## FAQ & Link & Help
