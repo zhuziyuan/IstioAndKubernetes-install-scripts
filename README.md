@@ -1,32 +1,29 @@
-# istio-install-scripts
-istio install scripts and samples.
+# istio & kubernetes install-scripts
+istio & kubernetes install scripts and samples.
 
-## Environment
-* kubernetes cluster
-
-## Install Istio
-```bash
-$ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_istio_on_k8s.sh | sh
-```
-
-## Remove Istio
-```bash
-$ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/remove_istio_on_k8s.sh | sh
-```
-
-## Telemetry
+# Istio
+* environment: `kubernetes cluster`
+* install:
+  ```bash
+  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_istio_on_k8s.sh | sh
+  ```
+* remove:
+  ```bash
+  $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/remove_istio_on_k8s.sh | sh
+  ```
+### Telemetry
 * install Servicegraph service
   ```bash
   $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/generating_service_graph.sh | sh
   ```
 
-## Examples
+### Examples
 * install bookinfo application
   ```bash
   $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install_bookinfo_app.sh | bash
   ```
 
-## Kubernetes
+# Kubernetes
 * [kubernetes nginx-ingress](https://github.com/tomoncle/istio-install-scripts/tree/master/samples/kubernetes/nginx-ingress)
 
 * download images
@@ -43,7 +40,8 @@ $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/maste
   ```bash
   $ curl -L https://raw.githubusercontent.com/tomoncle/istio-install-scripts/master/install/kubernetes/dashboard/kubernetes-dashboard.yaml | kubectl create -f - 
   ```
-## FAQ & Link?
+
+## FAQ & Link & Help
 * [install ingress-nginx for helm](https://github.com/kubernetes/ingress-nginx/tree/0.10.0/deploy#using-helm) & [helm install Info](https://github.com/helm/charts/tree/master/stable/nginx-ingress)
 * [Kubernetes LoadBalancer](https://www.cnblogs.com/yuxiaoba/p/9212280.html)
 * [kubernetes中服务的暴露访问方式（kubernetes ingress使用）](https://blog.csdn.net/newcrane/article/details/79092577)
