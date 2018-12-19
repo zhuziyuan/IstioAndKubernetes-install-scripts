@@ -11,6 +11,7 @@ istio & kubernetes install scripts and samples.
   ```bash
   $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/remove_istio_on_k8s.sh | sh
   ```
+
 ### Telemetry
 * install Servicegraph service
   ```bash
@@ -31,9 +32,14 @@ istio & kubernetes install scripts and samples.
   $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/k8s_image_download.py | python
   ```
 
-* install ingress
+* install ingress (hostNetwork)
   ```bash
   $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_ingress_for_kubernetes.sh | sh
+  ```
+  
+* install ingress (NodePort)
+  ```bash
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_ingress_for_kubernetes_2.sh | sh
   ```
 
 * install dashboard

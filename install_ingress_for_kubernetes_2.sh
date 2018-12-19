@@ -253,13 +253,17 @@ kubectl apply -f $IG_PATH/rbac.yaml
 
 ## with-rbac (nginx-ingress-controller )
 cat << EOF > $IG_PATH/with-rbac.yaml
+#
+# create nginx-ingress-controller
+# 不使用hostNetwork方式，使用普通pod方式，部署
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: nginx-ingress-controller
-  namespace: ingress-nginx 
+  namespace: ingress-nginx
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ingress-nginx
@@ -272,9 +276,9 @@ spec:
         prometheus.io/scrape: 'true'
     spec:
       serviceAccountName: nginx-ingress-serviceaccount
-      hostNetwork: true # 添加该字段，暴露nginx-ingress-controller pod的服务端口,直接映射为当前节点的网卡端口
-      nodeSelector:     # 添加该字段，使pod只调度到标签 zone=master2 的节点上
-        zone: master2
+      #hostNetwork: true # 添加该字段，暴露nginx-ingress-controller pod的服务端口,直接映射为当前节点的网卡端口
+      #nodeSelector:     # 添加该字段，使pod只调度到标签 zone=master2 的节点上
+      #  zone: master2
       containers:
         - name: nginx-ingress-controller
           image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.10.0
@@ -318,6 +322,29 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 1
+
+---
+
+# 添加默认没有的 nginx-ingress-controller-service, 并使用 nodePort 的方式暴露服务供外部使用
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-ingress-service
+  namespace: ingress-nginx
+  labels:
+    app: ingress-nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 28080
+    name: http
+  - port: 443
+    nodePort: 28443
+    name: https
+  selector:
+    app: ingress-nginx
 EOF
 
 kubectl apply -f $IG_PATH/with-rbac.yaml
@@ -327,11 +354,11 @@ rm -rf $IG_PATH/
 
 echo "\n 
 ***************************************** Test Ingress *****************************************
-这是以hostNetwork的方式部署的，需要占用当前node节点的80和443端口，服务也以该节点 ip:80 和 ip:443暴露
+这是以NodePort方式部署的，可以使用任意节点 ip:映射的端口 来访问
 
-注意测试时:
-要么以curl http://node_ip/ -H host:域名 的方式，
-要么要配置访问客户端所在机器的hosts文件(配置 nginx-ingress-controller pod 所在的 node_ip 域名1 域名2 域名3 ...)，或配置DNS
+注意测试时，
+要么以curl -H 的方式，例如：curl -v http://172.16.100.21:28080/force/forcegraph.html -H 'host:ingress.bookinfo.com'
+要么要配置访问客户端所在机器的hosts文件(任意一台node_ip 域名1 域名2 域名3 ...)，或配置DNS
 
 $ cat webapp.yaml
 
