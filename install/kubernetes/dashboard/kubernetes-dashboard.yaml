@@ -126,9 +126,9 @@ spec:
           # Create on-disk volume to store exec logs
         - mountPath: /tmp
           name: tmp-volume
-          # 添加数据卷，映射dashboard ui路径, 来修改dashboard
-        - name: sync-dashboard
-          mountPath: /public
+          # 添加数据卷，映射dashboard ui路径, 来修改dashboard 默认样式
+        #- name: sync-dashboard
+        #  mountPath: /public
         livenessProbe:
           httpGet:
             scheme: HTTPS
