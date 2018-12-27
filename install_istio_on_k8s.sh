@@ -22,7 +22,7 @@ app 标签在分布式跟踪的过程中会被用来加入上下文信息。Isti
 ISTIO_HOME=/usr/local/istio
 HELM_HOME=/usr/local/helm
 
-$ISTIO_HOME/istioctl version > /dev/null 2>&1
+$ISTIO_HOME/bin/istioctl version > /dev/null 2>&1
 
 if [ $? -ne 0 ];then
     # download install scripts
