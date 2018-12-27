@@ -22,7 +22,7 @@ app 标签在分布式跟踪的过程中会被用来加入上下文信息。Isti
 ISTIO_HOME=/usr/local/istio
 HELM_HOME=/usr/local/helm
 
-istioctl version > /dev/null 2>&1
+$ISTIO_HOME/istioctl version > /dev/null 2>&1
 
 if [ $? -ne 0 ];then
     # download install scripts
@@ -83,7 +83,7 @@ EOF
     rm -f downloadIstioCandidate.sh
     echo "************* Replace the default installation location **********************"
     echo "ISTIO INSTALL PATH: "$ISTIO_HOME
-    istioctl version
+    $ISTIO_HOME/bin/istioctl version
     echo "******************************************************************************"
     sleep 1
 else
@@ -93,6 +93,9 @@ else
     echo "*********************************************************"
     sleep 1
 fi
+
+# 刷新环境变量
+source ~/.bashrc > /dev/null 2>&1
 
 # download helm
 $HELM_HOME/helm version > /dev/null 2>&1
@@ -108,13 +111,13 @@ EOF
 
     echo -e "\n************* Helm the default installation location **********************"
     echo "HELM INSTALL PATH: "$HELM_HOME
-    helm version
+    $HELM_HOME/helm version
     echo -e "\n***************************************************************************"
     sleep 1
 else
     echo -e "\n************* Helm  already  exists **********************"
     echo "HELM INSTALL PATH: "$HELM_HOME
-    helm version
+    $HELM_HOME/helm version
     echo -e "\n**********************************************************"
     sleep 1
 fi
