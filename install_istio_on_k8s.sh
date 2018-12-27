@@ -101,6 +101,7 @@ source ~/.bashrc > /dev/null 2>&1
 $HELM_HOME/helm version > /dev/null 2>&1
 
 if [ $? -eq 127 ];then
+    echo "Downloading helm from https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz ..."
     curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz | tar xz && mv linux-amd64/ /usr/local/helm
 
     cat << EOF >> $HOME/.bashrc
