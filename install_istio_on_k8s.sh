@@ -77,7 +77,7 @@ EOF
 
 # add istio path
 export ISTIO_PATH=$ISTIO_HOME
-export PATH=\$ISTIO_HOME/bin:\$PATH
+export PATH=\$ISTIO_PATH/bin:\$PATH
 EOF
 
     # version
