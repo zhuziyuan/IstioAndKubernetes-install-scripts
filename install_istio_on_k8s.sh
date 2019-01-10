@@ -57,7 +57,8 @@ if [ "x\${ISTIO_VERSION}" = "x" ] ; then
 fi
 
 NAME="istio-\$ISTIO_VERSION"
-URL="https://github.com/istio/istio/releases/download/\${ISTIO_VERSION}/istio-\${ISTIO_VERSION}-\${OSEXT}.tar.gz"
+#URL="https://github.com/istio/istio/releases/download/\${ISTIO_VERSION}/istio-\${ISTIO_VERSION}-\${OSEXT}.tar.gz"
+URL="http://tomoncle.com/download/istio/istio-1.0.4-linux.tar.gz"
 echo "Downloading \$NAME from \$URL ..."
 curl -L "\$URL" | tar xz
 # TODO: change this so the version is in the tgz/directory name (users trying multiple versions)
@@ -102,7 +103,7 @@ $HELM_HOME/helm version > /dev/null 2>&1
 
 if [ $? -eq 127 ];then
     echo "Downloading helm from https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz ..."
-    curl -L https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz | tar xz && mv linux-amd64/ /usr/local/helm
+    curl -L http://tomoncle.com/download/helm/helm-v2.11.0-linux-amd64.tar.gz | tar xz && mv linux-amd64/ /usr/local/helm
 
     cat << EOF >> $HOME/.bashrc
 
