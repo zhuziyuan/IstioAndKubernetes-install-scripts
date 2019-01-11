@@ -5,23 +5,23 @@ istio & kubernetes install scripts and samples.
 * environment: `kubernetes cluster`
 * install:
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_istio_on_k8s.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/istio_install_on_k8s.sh | sh
   ```
 * remove:
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/remove_istio_on_k8s.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/istio_remove_on_k8s.sh | sh
   ```
 
 ### Telemetry
 * install Servicegraph service
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/generating_service_graph.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/istio_generating_service_graph.sh | sh
   ```
 
 ### Examples
 * install bookinfo application
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_bookinfo_app.sh | bash
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/istio_install_bookinfo_app.sh | bash
   ```
 
 # Kubernetes
@@ -34,12 +34,12 @@ istio & kubernetes install scripts and samples.
 
 * install ingress (hostNetwork)
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_ingress_for_kubernetes.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/k8s_install_ingress.sh | sh
   ```
   
 * install ingress (NodePort)
   ```bash
-  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/install_ingress_for_kubernetes_2.sh | sh
+  $ curl -L https://raw.githubusercontent.com/tomoncle/IstioAndKubernetes-install-scripts/master/k8s_install_ingress2.sh | sh
   ```
 
 * install dashboard
@@ -55,3 +55,4 @@ istio & kubernetes install scripts and samples.
 * [kubernetes之Ingress部署](http://blog.51cto.com/newfly/2060587)
 * [详解k8s组件Ingress边缘路由器并落地到微服务 - kubernetes](https://www.cnblogs.com/justmine/p/8991379.html)
 * [source-ip-for-services-with-type-loadbalancer](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-loadbalancer)
+* [Dashboard UI](https://github.com/smpio/kubernator)
