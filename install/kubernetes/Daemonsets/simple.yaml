@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: daemonset-tester
+spec:
+  template:
+    metadata:
+      labels:
+        app: daemonset-tester
+    spec:
+      nodeSelector:
+        role: master
+      containers:
+      - name: daemonset-tester
+        image: tomoncle/net-tools:latest
